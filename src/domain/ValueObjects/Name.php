@@ -6,6 +6,7 @@ final class Name extends StringValueObject
 {
     protected function setValue(string $input): void
     {
-        $this->value = trim($input);
+        $input = trim(preg_replace('/[^A-Za-z0-9\s]/', '', $input));
+        $this->value = preg_replace('/\s+/', ' ', $input);
     }
 }
