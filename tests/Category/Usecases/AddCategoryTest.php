@@ -2,10 +2,10 @@
 
 use Domain\Category\Category;
 use Domain\Category\Error\DuplicatedCategoryException;
-use Domain\Category\Usecase\AddNewCategory;
-use Domain\Category\Usecase\CategoryInput;
-use Domain\Category\Usecase\Interface\AddNewCategoryRepository;
-use Domain\Category\Usecase\Interface\SearchCategoryRepository;
+use Domain\Category\Usecases\AddNewCategory\AddNewCategory;
+use Domain\Category\Usecases\AddNewCategory\AddNewCategoryRepository;
+use Domain\Category\Usecases\AddNewCategory\CategoryInput;
+use Domain\Category\Usecases\SearchCategory\SearchCategoryRepository;
 
 class AddCategoryTest extends \PHPUnit\Framework\TestCase
 {
@@ -25,8 +25,7 @@ class AddCategoryTest extends \PHPUnit\Framework\TestCase
 
         $usecase = new AddNewCategory($saveCategory, $searchCategory);
 
-        $data = new CategoryInput();
-        $data->setName('category name');
+        $data = new CategoryInput(null, 'category name');
 
         $category_id = $usecase->handle($data);
 
@@ -43,14 +42,13 @@ class AddCategoryTest extends \PHPUnit\Framework\TestCase
 
         $searchCategory = new class implements SearchCategoryRepository {
             public function getCategoryByName(string $name) : ?Category {
-                return new Category('category name');
+                return Category::restore(1, 'category name');
             }
         };
 
         $usecase = new AddNewCategory($saveCategory, $searchCategory);
 
-        $data = new CategoryInput();
-        $data->setName('category name');
+        $data = new CategoryInput(1, 'category name');
 
         $this->expectException(DuplicatedCategoryException::class);
         

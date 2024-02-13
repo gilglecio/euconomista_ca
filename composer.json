@@ -5,7 +5,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Domain\\": "domain/"
+            "Domain\\": "src/domain/"
         }
     },
     "authors": [
@@ -13,6 +13,5 @@
             "name": "gilglecio oliveira",
             "email": "gilglecio_765@hotmail.com"
         }
-    ],
-    "require": {}
+    ]
 }

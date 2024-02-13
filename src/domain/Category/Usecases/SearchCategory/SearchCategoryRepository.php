@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Category\Usecase\Interface;
+namespace Domain\Category\Usecases\SearchCategory;
 
 use Domain\Category\Category;
 
