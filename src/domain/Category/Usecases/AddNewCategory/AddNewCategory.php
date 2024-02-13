@@ -17,7 +17,7 @@ class AddNewCategory
         $this->searchCategory = $searchCategory;
     }
 
-    public function handle(CategoryInput $input): int
+    public function handle(AddNewCategoryInput $input): int
     {
         if ($this->searchCategory->getCategoryByName($input->name)) {
             throw new DuplicatedCategoryException('Já existe uma categoria com este nome');

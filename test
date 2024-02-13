@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker exec -it euconomista_ca ./vendor/bin/phpunit

@@ -2,10 +2,9 @@
 
 namespace Domain\Category\Usecases\AddNewCategory;
 
-class CategoryInput
+class AddNewCategoryInput
 {
     public function __construct(
-        public readonly ?int $id,
         public readonly string $name
     ) {}
 }
