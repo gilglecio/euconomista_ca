@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Category\Error;
+namespace Domain\Category\Exceptions;
 
 class DuplicatedCategoryException extends CategoryException
 {

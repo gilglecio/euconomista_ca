@@ -4,7 +4,7 @@ namespace Domain\Category\Usecases\AddNewCategory;
 
 use Domain\Category\Category;
 
-use Domain\Category\Error\DuplicatedCategoryException;
+use Domain\Category\Exceptions\DuplicatedCategoryException;
 use Domain\Category\Usecases\SearchCategory\SearchCategoryRepository;
 
 class AddNewCategory

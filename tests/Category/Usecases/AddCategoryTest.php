@@ -1,7 +1,7 @@
 <?php
 
 use Domain\Category\Category;
-use Domain\Category\Error\DuplicatedCategoryException;
+use Domain\Category\Exceptions\DuplicatedCategoryException;
 use Domain\Category\Usecases\AddNewCategory\AddNewCategory;
 use Domain\Category\Usecases\AddNewCategory\AddNewCategoryRepository;
 use Domain\Category\Usecases\AddNewCategory\AddNewCategoryInput;
