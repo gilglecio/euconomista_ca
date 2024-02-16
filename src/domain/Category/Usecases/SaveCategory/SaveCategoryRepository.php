@@ -1,10 +1,10 @@
 <?php
 
-namespace Domain\Category\Usecases\AddNewCategory;
+namespace Domain\Category\Usecases\SaveCategory;
 
 use Domain\Category\Category;
 
-interface AddNewCategoryRepository
+interface SaveCategoryRepository
 {
     public function saveCategory(Category $category) : int;
 }
