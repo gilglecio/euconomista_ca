@@ -2,7 +2,7 @@
 
 namespace Domain\ValueObjects;
 
-final class UnsignedInteger extends IntegerValueObject
+class UnsignedInteger extends IntegerValueObject
 {
     protected function setValue(int $input): void
     {

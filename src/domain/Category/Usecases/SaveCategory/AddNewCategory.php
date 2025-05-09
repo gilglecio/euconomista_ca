@@ -12,10 +12,7 @@ class AddNewCategory
     public function __construct(
         private SaveCategoryRepository $saveCategory,
         private SearchCategoryRepository $searchCategory
-    ) {
-        $this->saveCategory = $saveCategory;
-        $this->searchCategory = $searchCategory;
-    }
+    ) {}
 
     public function handle(AddNewCategoryInput $input): int
     {
