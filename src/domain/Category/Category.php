@@ -13,13 +13,12 @@ class Category
         public readonly Name $name
     ) {}
 
-    public static function restore(int $id, string $name, ?int $category_id = null): self
+    public static function make(string $name, ?int $category_id = null, ?int $id = null): self
     {
-        return new Category(new UnsignedInteger($id), $category_id ? new UnsignedInteger($category_id) : null, new Name($name));
-    }
-
-    public static function make(string $name, ?int $category_id = null): self
-    {
-        return new Category(null, $category_id ? new UnsignedInteger($category_id) : null, new Name($name));
+        return new Category(
+            id: $id ? new UnsignedInteger($id) : null,
+            category_id: $category_id ? new UnsignedInteger($category_id) : null,
+            name: new Name($name),
+        );
     }
 }

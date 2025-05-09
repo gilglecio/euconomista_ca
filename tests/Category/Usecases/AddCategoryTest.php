@@ -42,7 +42,7 @@ class AddCategoryTest extends \PHPUnit\Framework\TestCase
 
         $searchCategory = new class implements SearchCategoryRepository {
             public function getCategoryByName(string $name) : ?Category {
-                return Category::restore(1, 'category name');
+                return Category::make(id: 1, name: 'category name');
             }
         };
 

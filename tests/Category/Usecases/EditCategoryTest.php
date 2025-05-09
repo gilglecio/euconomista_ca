@@ -44,7 +44,7 @@ class EditCategoryTest extends \PHPUnit\Framework\TestCase
 
         $searchCategory = new class implements SearchCategoryRepository {
             public function getCategoryByName(string $name) : ?Category {
-                return Category::restore(2, 'category name');
+                return Category::make(id: 2, name: 'category name');
             }
         };
 

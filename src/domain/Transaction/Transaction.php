@@ -19,23 +19,10 @@ class Transaction
         public readonly string $description,
     ) {}
 
-    public static function restore(int $id, int $category_id, string $type, int $amount, string $due_date, string $payment_date, string $description): self
+    public static function make(int $category_id, string $type, int $amount, string $due_date, string $description, ?string $payment_date = null, ?int $id = null): self
     {
         return new Transaction(
-            id: new UnsignedInteger($id),
-            category_id: new UnsignedInteger($category_id),
-            type: TransactionType::from($type),
-            amount: new Amount($amount),
-            due_date: new DateImmutable($due_date),
-            payment_date: $payment_date ? new DateImmutable($payment_date) : null,
-            description: $description
-        );
-    }
-
-    public static function make(int $category_id, string $type, int $amount, string $due_date, string $description, ?string $payment_date = null): self
-    {
-        return new Transaction(
-            id: null,
+            id: $id ? new UnsignedInteger($id) : null,
             category_id: new UnsignedInteger($category_id),
             type: TransactionType::from($type),
             amount: new Amount($amount),
